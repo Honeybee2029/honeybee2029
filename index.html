@@ -4,17 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choir Songs</title>
+    <style>
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <img src="images/logo.png" alt="choir logo" style="width: 150px; height: auto;">
+        <h1>YAHWEH ROYALTIES</h1>
+        <h1>Song List Below</h1>
+    </header>
 
-    <h1>YAHWEH ROYALTIES</h1>
-    <h1>Song List Below</h1>    
-    <ul>
+    <!-- Search input field -->
+    <div>
+        <input type="text" id="searchInput" placeholder="Search for a song..." onkeyup="searchSongs()">
+    </div>
+
+    <!-- Song List -->
+    <ul id="songList">
         <li><a href="Jingle_Bell.html">Jingle Bell</a></li>
         <li><a href="song2.html">Song 2</a></li>
         <!-- Add more songs here -->
     </ul>
+
+    <script>
+        function searchSongs() {
+            // Get the search input value and convert it to lowercase
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            
+            // Get all the list items (song titles)
+            let songList = document.getElementById('songList').getElementsByTagName('li');
+            
+            // Loop through the song list and hide/show based on the search input
+            for (let i = 0; i < songList.length; i++) {
+                let songTitle = songList[i].textContent || songList[i].innerText;
+                if (songTitle.toLowerCase().indexOf(input) > -1) {
+                    songList[i].style.display = ''; // Show the song
+                } else {
+                    songList[i].style.display = 'none'; // Hide the song
+                }
+            }
+        }
+    </script>
 </body>
 </html>
+
