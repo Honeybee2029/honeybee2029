@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #ffffff; /* White background */
+    background-color: #FFD1DC; /* Pastel pink */
     font-family: 'Angsana New', 'Taviraj', 'Times New Roman', serif; /* Fallbacks */
     color: #333;
     text-align: center;
