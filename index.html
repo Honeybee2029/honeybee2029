@@ -3,40 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choir Songs</title>
+    <title>Yahweh Royalties</title>
     <style>
-        /* Pastel pink background */
         body {
-            background-color: #f8c8d8; /* Pastel pink */
+            background-color: #f8c8d8;
             font-family: Arial, sans-serif;
             color: #333;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
 
-        /* Search input styling */
-        input[type="text"] {
-            padding: 8px;
-            width: 200px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        /* Song list styling */
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 5px 0;
-        }
-
-        /* Header styling */
         header {
-            background-color: #4B0082; /* Dark Purple header */
+            background-color: #4B0082;
             color: #fff;
-            padding: 20px;
+            padding: 30px 20px;
+            position: relative;
         }
 
         header img {
@@ -46,67 +28,72 @@
         }
 
         h1 {
-            margin: 10px 0;
+            margin: 10px 0 0;
         }
 
-        /* Navigation styling */
-        nav {
-            background-color: #f0f0f0;
-            padding: 10px;
-            text-align: center;
+        /* Hamburger icon */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
         }
 
-        nav a {
+        /* Dropdown menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
             text-decoration: none;
             color: #4B0082;
-            padding: 8px 15px;
-            margin: 0 10px;
+            border-bottom: 1px solid #eee;
         }
 
-        nav a:hover {
-            color: #fff;
-            background-color: #4B0082;
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.jpg" alt="choir logo" style="width: 150px; height: auto;">
+        <img src="logo.jpg" alt="Choir Logo">
         <h1>YAHWEH ROYALTIES</h1>
-        <h1>Song List Below</h1>
-    </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="song-list.html">Song List</a> |
-        <a href="about.html">About Yahweh Royalties</a> |
-        <a href="contact.html">Contact Us</a>
-    </nav>
+        <p><strong>Welcome to Our Official Page</strong></p>
 
-    <!-- Song List -->
-    <ul id="songList">
-        <li><a href="Jingle_Bell.html">Jingle Bell</a></li>
-        <li><a href="song2.html">Song 2</a></li>
-        <!-- Add more songs here -->
-    </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="dropdown" id="menuDropdown">
+            <a href="song-list.html">🎵 Song List</a>
+            <a href="about.html">📖 About Yahweh Royalties</a>
+            <a href="contact.html">📬 Contact Us</a>
+        </div>
+    </header>
 
     <script>
-        function searchSongs() {
-            // Get the search input value and convert it to lowercase
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            
-            // Get all the list items (song titles)
-            let songList = document.getElementById('songList').getElementsByTagName('li');
-            
-            // Loop through the song list and hide/show based on the search input
-            for (let i = 0; i < songList.length; i++) {
-                let songTitle = songList[i].textContent || songList[i].innerText;
-                if (songTitle.toLowerCase().indexOf(input) > -1) {
-                    songList[i].style.display = ''; // Show the song
-                } else {
-                    songList[i].style.display = 'none'; // Hide the song
-                }
+        function toggleMenu() {
+            const dropdown = document.getElementById("menuDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // Optional: Close menu if clicked outside
+        window.onclick = function(e) {
+            if (!e.target.matches('.hamburger')) {
+                document.getElementById("menuDropdown").style.display = "none";
             }
         }
     </script>
