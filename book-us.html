@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Us</title>
+  <style>
+    body {
+      background-color: #f8c8d8;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #4B0082;
+      color: white;
+      padding: 20px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4B0082;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6A0DAD;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Book Yahweh Royalties</h1>
+  </header>
+
+  <form action="https://formspree.io/f/mkgbaklk" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="event" placeholder="Event Type / Location" required />
+    <textarea name="message" rows="5" placeholder="Tell us about your event..." required></textarea>
+    <button type="submit">Send Booking Request</button>
+  </form>
+</body>
+</html>
