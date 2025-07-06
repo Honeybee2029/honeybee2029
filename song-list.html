@@ -1,25 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Song List</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Song List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8c8d8;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4B0082;
+      color: white;
+      padding: 20px;
+    }
+
+    header img {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      z-index: 1000;
+    }
+
+    nav {
+      background-color: #fff;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 200px;
+      display: none;
+      box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+      color: #4B0082;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .show {
+      display: block;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #4B0082;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.jpg" alt="Choir Logo" style="width: 150px; height: auto;">
-        <h1>Song List</h1>
-    </header>
+  <header>
+    <img src="logo.jpg" alt="Choir Logo" />
+    <h1>Song List</h1>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </header>
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="song-list.html">Song List</a> |
-        <a href="about.html">About Yahweh Royalties</a> |
-        <a href="contact.html">Contact Us</a>
-    </nav>
+  <nav id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="song-list.html">Song List</a>
+    <a href="about.html">About Yahweh Royalties</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-    <h2>Our Choir Songs</h2>
-    <ul>
-        <li><a href="Songs/jingle_bell.html">jingle bell</a></li>
-    </ul>
+  <h2>Our Songs</h2>
+  <ul>
+    <li><a href="Songs/Jingle_Bell.html">Jingle Bell</a></li>
+    <li><a href="Songs/song2.html">Song 2</a></li>
+  </ul>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
